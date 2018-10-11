@@ -6,11 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace core2api.Controllers
 {
+	[Route("api/")] // for xml/json switching
 	[Route("api/[controller]")]
 	[ApiController]
 	public class ValuesController : ControllerBase
 	{
 		// GET api/values
+		//[Produces("application/xml")]
+		//[HttpGet("values.{format}"), FormatFilter] // switched between xml/json formatted data returned
 		[HttpGet]
 		public ActionResult<IEnumerable<string>> Get()
 		{
